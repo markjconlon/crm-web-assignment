@@ -97,3 +97,27 @@ class Contact
       return "ERROR: Invalid attribute please use [first_name] [last_name] [email] [note] only"
     end
   end
+
+  # This method should delete all of the contacts
+  def self.delete_all
+    @@contacts = []
+  end
+
+  def full_name
+    "#{@first_name} #{last_name}"
+  end
+
+  # This method should delete the contact
+  # HINT: Check the Array class docs for built-in methods that might be useful here
+
+  #This method deletes every block which evaluates to true so have to use the unique_id
+  def delete
+    remove_id = self.id
+    @@contacts.delete_if do |contact|
+      contact.id == remove_id
+    end
+  end
+
+  # Feel free to add other methods here, if you need them.
+
+end
