@@ -8,6 +8,7 @@ require 'sinatra'
 # Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 # Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
+#these are listeners that conect the views to the controller
 get '/' do
   @crm_app_name = "Mark's CRM"
   erb :index
@@ -32,4 +33,17 @@ delete '/contacts/:id' do
   contact = Contact.find(params[:id].to_i)
   contact.delete
   redirect to('/contacts')
+end
+
+#not working
+patch '/contacts/:id' do
+  puts "modifying"
+  contact = Contact.find(params[:id].to_i)
+  redirect to('contacts/update')
+  contact.update
+  redirect to('/contacts')
+end
+
+get 'contact/update'
+
 end
