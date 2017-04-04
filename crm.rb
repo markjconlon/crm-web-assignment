@@ -35,15 +35,14 @@ delete '/contacts/:id' do
   redirect to('/contacts')
 end
 
-#not working
-patch '/contacts/:id' do
+#not working cant have multiple redirects unless
+put '/contacts/:id' do
   puts "modifying"
   contact = Contact.find(params[:id].to_i)
-  redirect to('contacts/update')
-  contact.update
-  redirect to('/contacts')
+  puts contact.id
+  redirect to("contacts/#{contact.id}/update/")
 end
 
-get 'contact/update'
-
+get 'contacts/:id/update' do
+  erb :update_contact
 end

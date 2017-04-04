@@ -12,9 +12,10 @@
     <% Contact.all.each do |contact| %>
       <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %> <%= contact.note %>
         <form action='/contacts/<%= contact.id %>' method='post'>
-          <input name="_method" type="hidden" value="patch" />
+          <input name="_method" type="hidden" value='put' />
           <input type='submit' value='Modify Contact'>
         </form>
+        
         <form action='/contacts/<%= contact.id %>' method='post'>
           <input name="_method" type="hidden" value="delete" />
           <input type='submit' value='Delete Contact'>
