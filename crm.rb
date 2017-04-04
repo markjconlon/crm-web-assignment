@@ -25,3 +25,11 @@ post '/contacts' do
   Contact.create(params[:first_name], params[:last_name], params[:email],  params[:note])
   redirect to('/contacts')
 end
+
+#this only works because of sinatra, pure HTTP only knows get and post
+delete '/contacts/:id' do
+  puts "Deleting!!"
+  contact = Contact.find(params[:id].to_i)
+  contact.delete
+  redirect to('/contacts')
+end

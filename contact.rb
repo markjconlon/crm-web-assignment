@@ -43,6 +43,7 @@ class Contact
         return contact
       end
     end
+    return false
   end
 
   # This method should allow you to specify
@@ -116,6 +117,7 @@ class Contact
     @@contacts.delete_if do |contact|
       contact.id == remove_id
     end
+    # @@contacts.delete(self) shorter way that works
   end
 
   # Feel free to add other methods here, if you need them.
