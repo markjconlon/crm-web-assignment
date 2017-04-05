@@ -7,7 +7,7 @@ require 'sinatra'
 # Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
 # Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 # Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
-
+Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
 #these are listeners that conect the views to the controller
 get '/' do
   @crm_app_name = "Mark's CRM"
@@ -27,22 +27,32 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
-#this only works because of sinatra, pure HTTP only knows get and post
-delete '/contacts/:id' do
-  puts "Deleting!!"
-  contact = Contact.find(params[:id].to_i)
-  contact.delete
-  redirect to('/contacts')
+get '/contacts/1' do
+  @contact = Contact.find(1)
+  erb :show_contact
 end
 
-#not working cant have multiple redirects unless
-put '/contacts/:id' do
-  puts "modifying"
-  contact = Contact.find(params[:id].to_i)
-  puts contact.id
-  redirect to("contacts/#{contact.id}/update/")
-end
 
-get 'contacts/:id/update' do
-  erb :update_contact
-end
+
+
+
+
+# #this only works because of sinatra, pure HTTP only knows get and post
+# delete '/contacts/:id' do
+#   puts "Deleting!!"
+#   contact = Contact.find(params[:id].to_i)
+#   contact.delete
+#   redirect to('/contacts')
+# end
+#
+# #not working cant have multiple redirects unless
+# put '/contacts/:id' do
+#   puts "modifying"
+#   contact = Contact.find(params[:id].to_i)
+#   puts contact.id
+#   redirect to("contacts/#{contact.id}/update/")
+# end
+#
+# get 'contacts/:id/update' do
+#   erb :update_contact
+# end

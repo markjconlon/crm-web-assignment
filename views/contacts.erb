@@ -1,5 +1,5 @@
 <ul>
-  <li class="num_of_contacts"> There are <%=Contact.all.length%> contacts</li>
+  <li class="num_of_contacts"> There are <span class="underline"><%=Contact.all.length%></span> contacts</li>
 <% Contact.all.each do |contact| %>
   <div class="contact_edit_delete">
     <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %> <%= contact.note %>
