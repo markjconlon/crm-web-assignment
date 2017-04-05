@@ -1,8 +1,9 @@
 <ul>
   <li class="num_of_contacts"> There are <%=Contact.all.length%> contacts</li>
 <% Contact.all.each do |contact| %>
+  <div class="contact_edit_delete">
   <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %> <%= contact.note %>
-    <form action='/contacts/<%= contact.id %>' method='post'>
+    <!-- <form action='/contacts/<%= contact.id %>' method='post'>
       <input name="_method" type="hidden" value='put' />
       <input type='submit' value='Modify Contact'>
     </form>
@@ -10,7 +11,9 @@
     <form action='/contacts/<%= contact.id %>' method='post'>
       <input name="_method" type="hidden" value="delete" />
       <input type='submit' value='Delete Contact'>
-    </form>
+    </form> -->
   </li>
+  <li><a href="#">Edit</a> | <a href="#">Delete</a></li>
+  </div>
 </ul>
 <% end %>
