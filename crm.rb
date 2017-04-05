@@ -41,6 +41,7 @@ get '/contacts/:id/edit' do
   if @contact
     erb :edit_contact
   else
+    puts "cant find id"
     raise Sinatra::NotFound
   end
 end

@@ -4,7 +4,7 @@
   <div class="contact_edit_delete">
     <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a> <%= contact.email %> <%= contact.note %>
     </li>
-    <li><a href="#">Edit</a> | <a href="#">Delete</a></li>
+    <li><a href="/contacts/<%= contact.id %>/edit">Edit</a> | <a href="/contacts/<%= contact.id %>">Delete</a></li>
   </div>
   <% end %>
 </ul>

@@ -1,13 +1,20 @@
 *, *::before, ::after {
     font-family: Helvetica, Arial, serif;
 }
-
+body{
+  /*position: relative;*/
+  margin: 0px;
+  width: 100%;
+}
 footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px;
     font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 header {

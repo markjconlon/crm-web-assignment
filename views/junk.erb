@@ -1,0 +1,9 @@
+<form action='/contacts/<%= contact.id %>' method='post'>
+  <input name="_method" type="hidden" value='put' />
+  <input type='submit' value='Modify Contact'>
+</form>
+
+<form action='/contacts/<%= contact.id %>' method='post'>
+  <input name="_method" type="hidden" value="delete" />
+  <input type='submit' value='Delete Contact'>
+</form>
