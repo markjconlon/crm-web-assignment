@@ -1,13 +1,56 @@
-*,
-::after,
-::before{
-  box-sizing: border-box;
+*, *::before, ::after {
+    font-family: Helvetica, Arial, serif;
 }
-html{
-  font-size: 16px;
+
+header, footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
-body{
-  background-color: cadetblue;
+
+header {
+    font-size: 30px;
+    margin: 0;
+}
+
+footer {
+    font-size: 16px;
+}
+
+nav {
+    width: 100%;
+    padding: 2px 0px;
+    margin: 2px 0px;
+    text-align: center;
+    color: white;
+}
+nav div {
+    margin: 2px 0px;
+    padding: 5px;
+    background-color: #D3D3D3;
+}
+a {
   color: white;
-  font-size: 1.25em;
+  text-decoration: none;
+}
+ul{
+  margin-right: 5%;
+}
+
+ul li{
+  background-color: #00E1D1;
+  padding: 5px;
+  list-style-type: none;
+  margin: 10px 0px;
+}
+
+.num_of_contacts{
+  background-color: #FF7F72;
+}
+img {
+  width: 100%;
+}
+main{
+  text-align: center;
 }
