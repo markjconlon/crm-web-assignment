@@ -14,7 +14,7 @@ class Contact < ActiveRecord::Base
   # attr_accessor :first_name, :last_name, :email, :note
   # attr_reader :id
   def full_name
-    "#{@first_name} #{last_name}"
+    "#{first_name} #{last_name}"
   end
 end
 Contact.auto_upgrade!

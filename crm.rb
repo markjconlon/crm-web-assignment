@@ -53,12 +53,12 @@ get '/contacts/:id/edit' do
 end
 
 put '/contacts/:id' do
-  @contact = Contact.find(params[:id].to_i)
+  contact = Contact.find(params[:id].to_i)
   if
-    @contact.update_attribute(:first_name, params[:first_name])
-    @contact.update_attribute(:last_name, params[:last_name])
-    @contact.update_attribute(:email, params[:email])
-    @contact.update_attribute(:note, params[:note])
+    contact.update_attribute(:first_name, params[:first_name])
+    contact.update_attribute(:last_name, params[:last_name])
+    contact.update_attribute(:email, params[:email])
+    contact.update_attribute(:note, params[:note])
 
     redirect to('/contacts')
   else
